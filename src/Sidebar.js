@@ -8,7 +8,7 @@ const list = [
 
 export const Sidebar = () => {
   return (
-    <div className='col-12 col-md-6 col-lg-4 p-4 aside'>
+    <div className='col-12 col-md-6 col-lg-4 p-4 aside d-none d-sm-none d-md-flex'>
       <h1 className='title h3'>Join a community of makers shipping together.</h1>
       <div className='subtitle my-3'>From first-ti,e entrepreneurs to solo-founders bootstrapping $300,000/year companies.</div>
       <ul className='list m-2'>
