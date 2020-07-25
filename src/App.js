@@ -15,6 +15,7 @@ function App() {
     password: ''
   })
   const [passwordError, setPasswordError] = useState('')
+  const [showErrors, setShowErrors] = useState(false)
 
   const handleCheck = e => {
     setIsChecked(e.target.checked)
@@ -26,8 +27,13 @@ function App() {
   }
   const handleSubmit = e => {
     e.preventDefault();
-    setData({ ...data, fullName: '', userName: '', email: '', password: '' })
-    setIsChecked(false)
+    if (passwordError.length > 0) {
+      setShowErrors(true)
+    } else {
+      setData({ ...data, fullName: '', userName: '', email: '', password: '' })
+      setIsChecked(false)
+      setShowErrors(false)
+    }
   }
 
   return (
@@ -134,7 +140,7 @@ function App() {
                   value={data.password}
                   onChange={handleInputChange}
                 />
-                {passwordError.length > 0 && <div className='small text-danger'>{passwordError}</div>}
+                {showErrors && <div className='small text-danger'>{passwordError}</div>}
               </div>
 
               <div className='form-group mt-3'>
@@ -148,9 +154,11 @@ function App() {
 
               <div className='col-12 col-md-6 pl-0'>
                 <button className='btn btn-danger btn-block'
-                  disabled={!isChecked || passwordError}
+                  disabled={!isChecked}
                   type='submit'
-                >Create account</button>
+                >
+                  Create account
+                </button>
               </div>
             </form>
 
