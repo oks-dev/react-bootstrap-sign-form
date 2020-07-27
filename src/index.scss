@@ -18,10 +18,24 @@ code {
   display: flex;
   .content {
     width: 100%;
-    // max-width: 900px;
+    max-width: 900px;
+    height: 670px;
     margin: auto;
     background-color: #fff;
     position: relative;
+    overflow: hidden;
+    @media (max-width: 576px) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 100vh;
+      padding: 15px;
+    }
+    .row {
+      height: 100%;
+    }
     .aside {
       display: flex;
       flex-direction: column;
@@ -61,6 +75,9 @@ code {
     .form-check label {
       font-weight: 400;
       font-size: 0.85rem;
+      @media (max-width: 370px) {
+        font-size: 10px;
+      }
     }
     input::placeholder,
     input::-webkit-input-placeholder {
@@ -90,6 +107,9 @@ code {
       &::after {
         right: 0;
       }
+      @media (max-width: 370px) {
+        margin: 8px 0 !important;
+      }
     }
     .btn-social {
       width: 39px;
@@ -113,6 +133,12 @@ code {
         width: 16px;
         margin-right: 10px;
       }
+      @media (max-width: 370px) {
+        font-size: 12px;
+      }
+    }
+    @media (max-width: 370px) {
+      padding: 16px 0 !important;
     }
   }
 }

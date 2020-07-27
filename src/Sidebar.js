@@ -8,12 +8,12 @@ const list = [
 
 export const Sidebar = () => {
   return (
-    <div className='col-12 col-md-6 col-lg-4 p-4 aside d-none d-sm-none d-md-flex'>
+    <div className='col-12 col-md-6 col-lg-4 p-4 pl-5 aside d-none d-sm-none d-md-flex'>
       <h1 className='title h3'>Join a community of makers shipping together.</h1>
       <div className='subtitle my-3'>From first-ti,e entrepreneurs to solo-founders bootstrapping $300,000/year companies.</div>
       <ul className='list m-2'>
         {list.map(item => (
-          <li className='d-flex mb-2 pb-2' key={item.id}>
+          <li className='d-flex mb-3 pb-2' key={item.id}>
             <span className='icon'><img src={`${item.icon}.png`} alt='' /></span>
             <div className='pl-2'>
               <p className='font-size-md mb-0'>
